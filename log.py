@@ -2,5 +2,5 @@ import os
 
 
 def log(message):
-    region = os.environ.get('TEST')
-    print(f'Logging: {message} - {region}')
+    variable = os.environ['TEST_VARIABLE']
+    print(f'Logging: {message} - {variable}')

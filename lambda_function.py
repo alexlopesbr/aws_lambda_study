@@ -8,5 +8,5 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 200,
-        'body': json.dumps(f'Hello from Lambda with GitHub Actions! {event_log}'),
+        'body': json.dumps(f'Hello from Lambda with GitHub Actions!\n Event log: {event_log}'),
     }
