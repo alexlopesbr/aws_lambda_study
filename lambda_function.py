@@ -1,14 +1,11 @@
 import boto3
 import json
 
-from log import log
-
 
 def lambda_handler(event, context):
     one_mega_byte = 1024 * 1024
     s3_client = boto3.client('s3')
 
-    event_log = log(event)
     record = event.Records[0]
     bucket = record.s3.bucket.name
     key = record.s3.object.key
@@ -22,5 +19,5 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 200,
-        'body': json.dumps(f'Hello from Lambda with GitHub Actions!\n Event log: {event_log}'),
+        'body': json.dumps(f'Hello from Lambda with GitHub Actions!'),
     }
